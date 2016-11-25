@@ -1,0 +1,34 @@
+Both nXYTER and PADIWA are
+5 kHz pulser/laser frequency, i.e. T=200000ns
+
+Everythin is scaled by 1/5 (on top of the 1/5 scaling of the nXYTER data)
+1) to compare with the old blackboard (fine!)
+2) to normalize to 1 kHz
+
+PADIWA ----------------------------------------------------------------------------------
+
+PADIWA data: threshold_scan_2
+
+Event window size:
+A 80ns (in fact everything falls into the 55ns window)
+B 100000ns (40000ns-140000ns)
+
+One file is 120 sec.
+There are 600000 sync messages per TDC (in agreement)
+
+
+nXYTER ----------------------------------------------------------------------------------
+
+nXYTER data: full_area_2
+only 1 file used
+
+nXYTER: 3000000 AUX messages
+hence one file is 600 sec => scale by 1/5
+
+Event window size:
+A 70ns
+B 100000ns (40000ns-140000ns)
+
+But! I think that the "A" win size does not matter as the goal of this window is just
+to take the peak which is concentrated in some limited range.
+Increasing the size of this window does not really affect the amount of signal taken.
