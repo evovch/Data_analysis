@@ -1,7 +1,22 @@
-Both nXYTER and PADIWA are
+For the results set #2 another nXYTER input file is used:
+full_area_data1_0000.root
+Which corresponds to another run (different from the full_area_2) and has 1 kHz pulser frequency and lowest threshold.
+
+No normalization is required here, because the pulser frequency is 1 kHz (and not 5 kHz in the other set of input data).
+Plus the acquisition time is exactly the same - 120 sec, so, again, no extra normalization is needed.
+
+
+
+
+
+
+PADIWA:
 5 kHz pulser/laser frequency, i.e. T=200000ns
 
-Everything is scaled by 1/5 (on top of the 1/5 scaling of the nXYTER data)
+nXYTER:
+1 kHz pulser/laser frequency, i.e. T=1000000ns
+
+Only the PADIWA data is scaled by 1/5
 1) to compare with the old blackboard (fine!)
 2) to normalize to 1 kHz
 
@@ -19,14 +34,15 @@ There are 600000 sync messages per TDC (in agreement)
 
 nXYTER ----------------------------------------------------------------------------------
 
-nXYTER data: full_area_2
+nXYTER data: full_area_1_0000
 only 1 file used
+1 kHz freq and lowest threshold
 
-nXYTER: 3000000 AUX messages
-hence one file is 600 sec => scale by 1/5
+nXYTER: 120000 AUX messages
+hence one file is 120 sec
 
 Event window size:
-A 70ns
+A 100ns
 B 100000ns (40000ns-140000ns)
 
 But! I think that the "A" win size does not matter as the goal of this window is just
