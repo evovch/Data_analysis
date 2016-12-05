@@ -52,7 +52,7 @@ void calibTableFitting(TString p_filename="calib/calib_sum.root")
 
 			TH1D* curHisto;
 			curHisto = (TH1D*)inputFile->Get(histoName);
-			
+
 			curHisto->Draw();
 
 			TF1* fitFunc = new TF1("fitFunc", fitF, 0., 600., 2);
@@ -88,7 +88,15 @@ outside:
 
 	TCanvas* canv2 = new TCanvas("ABmap", "ABmap", 1364, 796);
 	ABmap->Draw("COLZ");
+	ABmap->GetXaxis()->SetTitle("Fine time counter value");
+	ABmap->GetYaxis()->SetTitle("Fine time counter value");
 	gPad->SetGrid(1, 1);
+	gPad->Update();
+
+	TPaveStats *ps1 = (TPaveStats*)ABmap->GetListOfFunctions()->FindObject("stats");
+	ps1->SetX1NDC(0.60); ps1->SetX2NDC(0.85);
+	gPad->Modified();
+
 	canv2->SaveAs("ABmap.eps");
 	canv2->SaveAs("ABmap.png");
 

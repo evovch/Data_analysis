@@ -50,13 +50,13 @@ void buildCalibStability(TString listFilename="calibStabilityFilelist.txt", TStr
 	}
 
 	Color_t v_colors[7];
-	v_colors[0] = kBlack;
-	v_colors[1] = kRed;
-	v_colors[2] = kYellow;
-	v_colors[3] = kGreen;
-	v_colors[4] = kBlue;
-	v_colors[5] = kCyan;
-	v_colors[6] = kMagenta;
+	v_colors[0] = kBlack; // kBlack
+	v_colors[1] = kBlack; // kRed;
+	v_colors[2] = kBlack; // kYellow;
+	v_colors[3] = kBlack; // kGreen;
+	v_colors[4] = kBlack; // kBlue;
+	v_colors[5] = kBlack; // kCyan;
+	v_colors[6] = kBlack; // kMagenta;
 
 	UInt_t v_lineStyles[7];
 	v_lineStyles[0] = 1;
@@ -79,13 +79,23 @@ void buildCalibStability(TString listFilename="calibStabilityFilelist.txt", TStr
 	gPad->SetGrid(1,1);
 	gStyle->SetOptStat(kFALSE);
 	sourceHistos[0]->SetTitle("CalibrationStability");
-
+/*
 	for (UInt_t i=1; i<7; i++) {
 		sourceHistos[i]->Draw("sames][");
 		sourceHistos[i]->SetLineColor(v_colors[i]);
 		sourceHistos[i]->SetLineStyle(v_lineStyles[i]);
 		sourceHistos[i]->SetLineWidth(2.);
 	}
+*/
+	i=3;
+	sourceHistos[i]->Draw("sames][");
+	sourceHistos[i]->SetLineColor(v_colors[i]);
+	sourceHistos[i]->SetLineStyle(v_lineStyles[i]);
+	sourceHistos[i]->SetLineWidth(2.);
 
-
+	i=6;
+	sourceHistos[i]->Draw("sames][");
+	sourceHistos[i]->SetLineColor(v_colors[i]);
+	sourceHistos[i]->SetLineStyle(v_lineStyles[i]);
+	sourceHistos[i]->SetLineWidth(2.);
 }
