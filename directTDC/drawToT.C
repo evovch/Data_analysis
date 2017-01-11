@@ -46,7 +46,7 @@ void drawToT(UInt_t p_ch=2,
 		histo[i]->Draw();
 		histo[i]->Rebin(4);
 		histo[i]->SetLineWidth(2);
-		histo[i]->GetXaxis()->SetRangeUser(10.4, 10.8);
+		//histo[i]->GetXaxis()->SetRangeUser(10., 11.);
 		histo[i]->GetXaxis()->SetTitle("ns");
 		histo[i]->GetYaxis()->SetTitle("Entries");
 		gPad->SetGrid(1, 1);

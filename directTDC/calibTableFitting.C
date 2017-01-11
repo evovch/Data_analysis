@@ -25,7 +25,7 @@ UInt_t IntegerToTDCid(UInt_t index)
     return (((index/4) + 1) << 4) + (index%4);
 }
 
-void calibTableFitting(TString p_filename="calib/calib_sum.root")
+void calibTableFitting(TString p_filename="calib_sum.root")
 {
 	TFile* inputFile = new TFile(p_filename, "READ");
 
@@ -90,31 +90,65 @@ void calibTableFitting(TString p_filename="calib/calib_sum.root")
 	} // end of loop over TDCs
 
 	TCanvas* canvGraph = new TCanvas("canvGraph", "canvGraph", 1364, 796);
-	TGraph* ABgraph = new TGraph();
+	TGraph* ABgraphL = new TGraph();
+	TGraph* ABgraphT = new TGraph();
 
 	/*gStyle->SetMarkerSize(1);
 	gStyle->SetMarkerStyle(20);
 	gStyle->SetMarkerColor(kRed);*/
 
+	UInt_t counterL=0;
+	UInt_t counterT=0;
+
 	for (UInt_t tdc=0; tdc<NUMTDCs; tdc++) {
-		for (UInt_t ch=1; ch<NUMCHs; ch++) {
-			ABgraph->SetPoint(tdc*NUMCHs + ch-1, A[tdc][ch-1], B[tdc][ch-1]);
+		for (UInt_t ch=1; ch<NUMCHs; ch+=2) {
+			ABgraphL->SetPoint(counterL++, A[tdc][ch-1], B[tdc][ch-1]);		// tdc*NUMCHs + ch-1
+		}
+		for (UInt_t ch=2; ch<NUMCHs; ch+=2) {
+			ABgraphT->SetPoint(counterT++, A[tdc][ch-1], B[tdc][ch-1]);
 		}
 	}
-	ABgraph->Draw("A*");
+	ABgraphL->Draw("A*");
 	gPad->SetGrid(1, 1);
 	//ABgraph->GetXaxis()->SetRangeUser(20., 34.);
 	//ABgraph->GetYaxis()->SetRangeUser(420., 560.);
-	ABgraph->SetMarkerStyle(kFullDotMedium);
-	ABgraph->GetXaxis()->SetTitle("Fine time counter value");
-	ABgraph->GetYaxis()->SetTitle("Fine time counter value");
+	ABgraphL->GetXaxis()->SetTitle("Fine time counter value");
+	ABgraphL->GetYaxis()->SetTitle("Fine time counter value");
+	ABgraphL->SetMarkerStyle(kFullCircle); // kFullDotMedium
+	ABgraphL->SetMarkerColor(kBlack);
+	ABgraphL->SetMarkerSize(1);
+
+	ABgraphT->Draw("*");
+	ABgraphT->SetMarkerStyle(kFullCircle);
+	ABgraphT->SetMarkerColor(kRed);
+	ABgraphT->SetMarkerSize(1);
 
 	TGraph* meanABgr = new TGraph();
-	meanABgr->SetPoint(1, 27.44, 507.6);
+	meanABgr->SetPoint(0, 27.3, 507.7);
 	meanABgr->Draw("*");
 	meanABgr->SetMarkerStyle(kFullSquare);
 	meanABgr->SetMarkerColor(kRed);
 	meanABgr->SetMarkerSize(3);
+
+	UInt_t ch = 1;
+	TGraph* usedABgrL = new TGraph();
+	usedABgrL->SetPoint(0, A[0][ch-1], B[0][ch-1]);
+	usedABgrL->Draw("*");
+	usedABgrL->SetMarkerStyle(kFullTriangleUp);
+	usedABgrL->SetMarkerColor(kBlack);
+	usedABgrL->SetMarkerSize(3);
+
+	cout << "Leading " << A[0][ch-1] << ", " << B[0][ch-1] << endl;
+
+	ch = 2;
+	TGraph* usedABgrT = new TGraph();
+	usedABgrT->SetPoint(0, A[0][ch-1], B[0][ch-1]);
+	usedABgrT->Draw("*");
+	usedABgrT->SetMarkerStyle(kFullTriangleUp);
+	usedABgrT->SetMarkerColor(kRed);
+	usedABgrT->SetMarkerSize(3);
+
+	cout << "Trailing " << A[0][ch-1] << ", " << B[0][ch-1] << endl;
 
 	canvGraph->SaveAs("ABmap.eps");
 	canvGraph->SaveAs("ABmap.png");
@@ -122,7 +156,7 @@ void calibTableFitting(TString p_filename="calib/calib_sum.root")
 outside:
 
 	TCanvas* canv2 = new TCanvas("ABmap", "ABmap", 1364, 796);
-	ABmap->Draw("COLZ"); // COLZ
+	ABmap->Draw("TEXT"); // COLZ
 	ABmap->GetXaxis()->SetTitle("Fine time counter value");
 	ABmap->GetYaxis()->SetTitle("Fine time counter value");
 	gPad->SetGrid(1, 1);
@@ -138,6 +172,10 @@ outside:
 	//inputFile->Close();
 
 	TFile* outputFile = new TFile("globalCalibFitting.root", "RECREATE");
+
+	ABgraphL->Write();
+	ABgraphT->Write();
+	meanABgr->Write();
 
 	ABmap->Write();
 	Ahisto->Write();

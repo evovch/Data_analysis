@@ -44,13 +44,13 @@ void drawLeadEdgeDiff(UInt_t p_ch=2,
 	for (UInt_t i=0; i<4; i++) {
 		canv->cd(i+1);
 		histo[i]->Draw();
-//		histo[i]->Rebin(4);
+		histo[i]->Rebin(4);
 		histo[i]->SetLineWidth(2);
-		histo[i]->GetXaxis()->SetRangeUser(10.4, 10.8);
+		//histo[i]->GetXaxis()->SetRangeUser(10., 11.);
 		histo[i]->GetXaxis()->SetTitle("ns");
 		histo[i]->GetYaxis()->SetTitle("Entries");
 		gPad->SetGrid(1, 1);
-//		gPad->SetLogy();
+		gPad->SetLogy();
 	}
 
 	TString histoTitle;
