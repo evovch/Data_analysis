@@ -1,3 +1,5 @@
+#define LINEWIDTH 3
+
 void buildBlackboard(TString p_mappingFilename="Mapping_2016.txt",
 					 TString nx_inFile="data/analysis_full_area_2_data1.root",
 					 TString padiwa_inFile="data/thrScans_from_pairs.root",
@@ -175,23 +177,23 @@ void buildBlackboard(TString p_mappingFilename="Mapping_2016.txt",
 		// PADIWA
 		canv[iPixel]->cd(2);
 		pHistos[0][pCh-1]->Draw();
-		pHistos[0][pCh-1]->SetLineWidth(2);
+		pHistos[0][pCh-1]->SetLineWidth(LINEWIDTH);
 		pHistos[0][pCh-1]->GetYaxis()->SetRangeUser(0., 75000./5.);
 		gPad->SetGrid(1, 1);
 		canv[iPixel]->cd(4);
 		pHistos[1][pCh-1]->Draw();
-		pHistos[1][pCh-1]->SetLineWidth(2);
+		pHistos[1][pCh-1]->SetLineWidth(LINEWIDTH);
 		gPad->SetGrid(1, 1);
 
 		// nXYTER
 		canv[iPixel]->cd(3);
 		nxHistos[0][nxCh]->Draw();
-		nxHistos[0][nxCh]->SetLineWidth(2);
+		nxHistos[0][nxCh]->SetLineWidth(LINEWIDTH);
 		nxHistos[0][nxCh]->GetXaxis()->SetRangeUser(0., 1000.);
 		gPad->SetGrid(1, 1);
 		canv[iPixel]->cd(1);
 		nxHistos[1][nxCh]->Draw();
-		nxHistos[1][nxCh]->SetLineWidth(2);
+		nxHistos[1][nxCh]->SetLineWidth(LINEWIDTH);
 		nxHistos[1][nxCh]->GetYaxis()->SetRangeUser(0., 75000./5.);
 		nxHistos[1][nxCh]->GetXaxis()->SetRangeUser(0., 1000.);
 		gPad->SetGrid(1, 1);
@@ -219,23 +221,23 @@ void buildBlackboard(TString p_mappingFilename="Mapping_2016.txt",
 		// PADIWA
 		canvNoise[iPixel]->cd(2);
 		pnHistos[0][pCh-1]->Draw();
-		pnHistos[0][pCh-1]->SetLineWidth(2);
+		pnHistos[0][pCh-1]->SetLineWidth(LINEWIDTH);
 		//pnHistos[0][pCh-1]->GetYaxis()->SetRangeUser(0., 10000./5.);
 		gPad->SetGrid(1, 1);
 		canvNoise[iPixel]->cd(4);
 		pnHistos[1][pCh-1]->Draw();
-		pnHistos[1][pCh-1]->SetLineWidth(2);
+		pnHistos[1][pCh-1]->SetLineWidth(LINEWIDTH);
 		gPad->SetGrid(1, 1);
 
 		// nXYTER
 		canvNoise[iPixel]->cd(3);
 		nxnHistos[0][nxCh]->Draw();
-		nxnHistos[0][nxCh]->SetLineWidth(2);
+		nxnHistos[0][nxCh]->SetLineWidth(LINEWIDTH);
 		nxnHistos[0][nxCh]->GetXaxis()->SetRangeUser(0., 1000.);
 		gPad->SetGrid(1, 1);
 		canvNoise[iPixel]->cd(1);
 		nxnHistos[1][nxCh]->Draw();
-		nxnHistos[1][nxCh]->SetLineWidth(2);
+		nxnHistos[1][nxCh]->SetLineWidth(LINEWIDTH);
 		//nxnHistos[1][nxCh]->GetYaxis()->SetRangeUser(0., 10000./5.);
 		nxnHistos[1][nxCh]->GetXaxis()->SetRangeUser(0., 1000.);
 		gPad->SetGrid(1, 1);

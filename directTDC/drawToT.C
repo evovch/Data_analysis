@@ -21,7 +21,6 @@ void drawToT(UInt_t p_ch=2,
 		}
 	}
 
-
 	TString histoName;
 	histoName.Form("ToT_ch%d", p_ch);
 
@@ -45,8 +44,9 @@ void drawToT(UInt_t p_ch=2,
 	for (UInt_t i=0; i<4; i++) {
 		canv->cd(i+1);
 		histo[i]->Draw();
+		histo[i]->Rebin(4);
 		histo[i]->SetLineWidth(2);
-		//histo[i]->GetXaxis()->SetRangeUser(10., 11.);
+		histo[i]->GetXaxis()->SetRangeUser(10.4, 10.8);
 		histo[i]->GetXaxis()->SetTitle("ns");
 		histo[i]->GetYaxis()->SetTitle("Entries");
 		gPad->SetGrid(1, 1);
@@ -64,9 +64,9 @@ void drawToT(UInt_t p_ch=2,
 	histo[3]->SetTitle(histoTitle);
 
 	TString outFilename;
-	outFilename.Form("pictures_ToT/ToT_ch%d.png", p_ch);
+	outFilename.Form("pictures_ToT/ToT_noLog_ch%d.png", p_ch);
 	canv->SaveAs(outFilename);
-	outFilename.Form("pictures_ToT/ToT_ch%d.eps", p_ch);
+	outFilename.Form("pictures_ToT/ToT_noLog_ch%d.eps", p_ch);
 	canv->SaveAs(outFilename);
 
 }

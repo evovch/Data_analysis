@@ -1,6 +1,11 @@
 // A - first boundary
 // B - second boundary
 
+Double_t Xmin = 22.;
+Double_t Xmax = 32.;
+Double_t Ymin = 440.;
+Double_t Ymax = 560.;
+
 Double_t fitF(Double_t* x, Double_t* par)
 {
 	if (x[0] < par[0]) {
@@ -28,7 +33,7 @@ void calibTableFitting(TString p_filename="calib/calib_sum.root")
 	const UInt_t NUMCHs = 33;
 
 	TH1D* outputHisto[NUMTDCs][(NUMCHs-1)];
-	TH2D* ABmap = new TH2D("ABmap", "ABmap", 50, 0., 100., 100, 400., 600.);
+	TH2D* ABmap = new TH2D("ABmap", "ABmap", 5*(Xmax-Xmin), Xmin, Xmax, 5*(Ymax-Ymin), Ymin, Ymax);
 	TH1D* Ahisto = new TH1D("Ahisto", "Ahisto", 100, 0., 100.);
 	TH1D* Bhisto = new TH1D("Bhisto", "Bhisto", 200, 400., 600.);
 
@@ -84,10 +89,40 @@ void calibTableFitting(TString p_filename="calib/calib_sum.root")
 		} // end of loop over channels
 	} // end of loop over TDCs
 
+	TCanvas* canvGraph = new TCanvas("canvGraph", "canvGraph", 1364, 796);
+	TGraph* ABgraph = new TGraph();
+
+	/*gStyle->SetMarkerSize(1);
+	gStyle->SetMarkerStyle(20);
+	gStyle->SetMarkerColor(kRed);*/
+
+	for (UInt_t tdc=0; tdc<NUMTDCs; tdc++) {
+		for (UInt_t ch=1; ch<NUMCHs; ch++) {
+			ABgraph->SetPoint(tdc*NUMCHs + ch-1, A[tdc][ch-1], B[tdc][ch-1]);
+		}
+	}
+	ABgraph->Draw("A*");
+	gPad->SetGrid(1, 1);
+	//ABgraph->GetXaxis()->SetRangeUser(20., 34.);
+	//ABgraph->GetYaxis()->SetRangeUser(420., 560.);
+	ABgraph->SetMarkerStyle(kFullDotMedium);
+	ABgraph->GetXaxis()->SetTitle("Fine time counter value");
+	ABgraph->GetYaxis()->SetTitle("Fine time counter value");
+
+	TGraph* meanABgr = new TGraph();
+	meanABgr->SetPoint(1, 27.44, 507.6);
+	meanABgr->Draw("*");
+	meanABgr->SetMarkerStyle(kFullSquare);
+	meanABgr->SetMarkerColor(kRed);
+	meanABgr->SetMarkerSize(3);
+
+	canvGraph->SaveAs("ABmap.eps");
+	canvGraph->SaveAs("ABmap.png");
+
 outside:
 
 	TCanvas* canv2 = new TCanvas("ABmap", "ABmap", 1364, 796);
-	ABmap->Draw("COLZ");
+	ABmap->Draw("COLZ"); // COLZ
 	ABmap->GetXaxis()->SetTitle("Fine time counter value");
 	ABmap->GetYaxis()->SetTitle("Fine time counter value");
 	gPad->SetGrid(1, 1);
@@ -97,8 +132,8 @@ outside:
 	ps1->SetX1NDC(0.60); ps1->SetX2NDC(0.85);
 	gPad->Modified();
 
-	canv2->SaveAs("ABmap.eps");
-	canv2->SaveAs("ABmap.png");
+	canv2->SaveAs("ABmap2.eps");
+	canv2->SaveAs("ABmap2.png");
 
 	//inputFile->Close();
 

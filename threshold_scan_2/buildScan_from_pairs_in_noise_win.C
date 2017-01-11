@@ -1,3 +1,5 @@
+#define BASELINE 0x8220
+
 void buildScan_from_pairs_in_noise_win(TString listFilename="analysis_results/filelist3.txt", TString picturesDir="scans/pictures_from_pairs_in_noise_win")
 {
 	// Read the table from the file
@@ -11,14 +13,16 @@ void buildScan_from_pairs_in_noise_win(TString listFilename="analysis_results/fi
 	TString hName;
 	TString hTitle;
 
+	UInt_t totalNbins = (BASELINE-0x7600)/0x20;
+
 	for (unsigned int i=0; i<64; i++) {
 		hName.Form("scanCurve_ch%d", i);
 		hTitle.Form("Threshold scan for channel %d;Theshold in a.u.;Hits", i);
-		scanCurve[i] = new TH1D(hName, hTitle, 76, 0., 76.);
+		scanCurve[i] = new TH1D(hName, hTitle, totalNbins, -BASELINE, -0x7600);
 
 		hName.Form("scanDeriv_ch%d", i);
 		hTitle.Form("Derivative of the threshold scan for channel %d;Theshold in a.u.", i);
-		derivCurve[i] = new TH1D(hName, hTitle, 76, 0., 76.);
+		derivCurve[i] = new TH1D(hName, hTitle, totalNbins, -BASELINE, -0x7600);
 	}
 
 	Double_t bin71value[64];
@@ -50,7 +54,7 @@ void buildScan_from_pairs_in_noise_win(TString listFilename="analysis_results/fi
 
 			k = i;
 
-			scanCurve[i]->SetBinContent(75-lineCounter+1, curHisto->GetBinContent(k+1));
+			scanCurve[i]->SetBinContent(totalNbins-lineCounter, curHisto->GetBinContent(k+1));
 
 			if (lineCounter == 71) { bin71value[i] = curHisto->GetBinContent(k+1); }
 			if (lineCounter == 74) { bin74value[i] = curHisto->GetBinContent(k+1); }
@@ -61,8 +65,9 @@ void buildScan_from_pairs_in_noise_win(TString listFilename="analysis_results/fi
 
 	// Fix two bad measurements
 	for (unsigned int i=0; i<64; i++) {
-		scanCurve[i]->SetBinContent(75-72+1, bin71value[i] + (bin74value[i]-bin71value[i])/3.);
-		scanCurve[i]->SetBinContent(75-73+1, bin71value[i] + (bin74value[i]-bin71value[i])*2./3.);
+		scanCurve[i]->SetBinContent(totalNbins-72, bin71value[i] + (bin74value[i]-bin71value[i])/3.);
+		scanCurve[i]->SetBinContent(totalNbins-73, bin71value[i] + (bin74value[i]-bin71value[i])*2./3.);
+		scanCurve[i]->SetBinContent(totalNbins-76, 0.);
 	}
 
 	// Create derivative
@@ -74,7 +79,6 @@ void buildScan_from_pairs_in_noise_win(TString listFilename="analysis_results/fi
 			}
 		}
 	}
-
 
 	// Draw into PNG and EPS files
 	gStyle->SetOptStat(kFALSE);
@@ -88,7 +92,6 @@ void buildScan_from_pairs_in_noise_win(TString listFilename="analysis_results/fi
 		scanCurve[iCanv]->SetLineWidth(2);
 		gPad->SetGrid(1, 1);
 		//scanCurve[iCanv]->GetYaxis()->SetRangeUser(0., 65000.);
-
 
 		TString outFilename;
 		outFilename.Form("%s_png/ThresholdScan_ch%d.png", picturesDir.Data(), iCanv);

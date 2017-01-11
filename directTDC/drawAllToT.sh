@@ -7,6 +7,12 @@ else
 	mkdir $OUTDIRNAME
 fi
 
+OUTDIRNAME=pictures_LeadEdgeDiff
+if [ -d "$OUTDIRNAME" ]; then
+	rm -fv $OUTDIRNAME/*
+else
+	mkdir $OUTDIRNAME
+fi
 
 INDIR=results_calib_real
 
@@ -16,6 +22,7 @@ for FILE in ${INDIR}/analysis_info_*.root
 do
 	FILENAME=$(basename ${FILE})
 	root -l -b -q "drawToT.C(${iChannel}, \"${FILENAME}\")"
+	root -l -b -q "drawLeadEdgeDiff.C(${iChannel}, \"${FILENAME}\")"
 
 	let iChannel=iChannel+1
 done

@@ -19,7 +19,7 @@ ANALYSISINFOFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 CORRECTIONSFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 RINGSANALYSISINFOFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 Successfully imported config file /home/evovch/Documents/Analysis_Sep2016/directTDC/config/config10.cfg
-Successfully imported calibration tables from /home/evovch/Documents/Analysis_Sep2016/directTDC/calib/calib_te15134135619.hld.root.
+Successfully imported calibration tables from /home/evovch/Documents/Analysis_Sep2016/directTDC/calib/calib_sum.root.
 Successfully read pixel map file ../pixel-coord_channel-register.ascii
 Importing file /home/evovch/Documents/DATA/Scan_direct_tdc_0010_refch_1/te15134135619.hld
 The entire file /home/evovch/Documents/DATA/Scan_direct_tdc_0010_refch_1/te15134135619.hld is in memory
@@ -759,7 +759,7 @@ ANALYSISINFOFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 CORRECTIONSFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 RINGSANALYSISINFOFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 Successfully imported config file /home/evovch/Documents/Analysis_Sep2016/directTDC/config/config11.cfg
-Successfully imported calibration tables from /home/evovch/Documents/Analysis_Sep2016/directTDC/calib/calib_te15134135918.hld.root.
+Successfully imported calibration tables from /home/evovch/Documents/Analysis_Sep2016/directTDC/calib/calib_sum.root.
 Successfully read pixel map file ../pixel-coord_channel-register.ascii
 Importing file /home/evovch/Documents/DATA/Scan_direct_tdc_0010_refch_1/te15134135918.hld
 The entire file /home/evovch/Documents/DATA/Scan_direct_tdc_0010_refch_1/te15134135918.hld is in memory
@@ -1499,7 +1499,7 @@ ANALYSISINFOFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 CORRECTIONSFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 RINGSANALYSISINFOFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 Successfully imported config file /home/evovch/Documents/Analysis_Sep2016/directTDC/config/config12.cfg
-Successfully imported calibration tables from /home/evovch/Documents/Analysis_Sep2016/directTDC/calib/calib_te15134140253.hld.root.
+Successfully imported calibration tables from /home/evovch/Documents/Analysis_Sep2016/directTDC/calib/calib_sum.root.
 Successfully read pixel map file ../pixel-coord_channel-register.ascii
 Importing file /home/evovch/Documents/DATA/Scan_direct_tdc_0010_refch_1/te15134140253.hld
 The entire file /home/evovch/Documents/DATA/Scan_direct_tdc_0010_refch_1/te15134140253.hld is in memory
@@ -2240,7 +2240,7 @@ ANALYSISINFOFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 CORRECTIONSFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 RINGSANALYSISINFOFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 Successfully imported config file /home/evovch/Documents/Analysis_Sep2016/directTDC/config/config13.cfg
-Successfully imported calibration tables from /home/evovch/Documents/Analysis_Sep2016/directTDC/calib/calib_te15134140548.hld.root.
+Successfully imported calibration tables from /home/evovch/Documents/Analysis_Sep2016/directTDC/calib/calib_sum.root.
 Successfully read pixel map file ../pixel-coord_channel-register.ascii
 Importing file /home/evovch/Documents/DATA/Scan_direct_tdc_0010_refch_1/te15134140548.hld
 The entire file /home/evovch/Documents/DATA/Scan_direct_tdc_0010_refch_1/te15134140548.hld is in memory
@@ -2977,7 +2977,7 @@ ANALYSISINFOFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 CORRECTIONSFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 RINGSANALYSISINFOFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 Successfully imported config file /home/evovch/Documents/Analysis_Sep2016/directTDC/config/config14.cfg
-Successfully imported calibration tables from /home/evovch/Documents/Analysis_Sep2016/directTDC/calib/calib_te15134140825.hld.root.
+Successfully imported calibration tables from /home/evovch/Documents/Analysis_Sep2016/directTDC/calib/calib_sum.root.
 Successfully read pixel map file ../pixel-coord_channel-register.ascii
 Importing file /home/evovch/Documents/DATA/Scan_direct_tdc_0010_refch_1/te15134140825.hld
 The entire file /home/evovch/Documents/DATA/Scan_direct_tdc_0010_refch_1/te15134140825.hld is in memory
@@ -3717,7 +3717,7 @@ ANALYSISINFOFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 CORRECTIONSFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 RINGSANALYSISINFOFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 Successfully imported config file /home/evovch/Documents/Analysis_Sep2016/directTDC/config/config15.cfg
-Successfully imported calibration tables from /home/evovch/Documents/Analysis_Sep2016/directTDC/calib/calib_te15134141138.hld.root.
+Successfully imported calibration tables from /home/evovch/Documents/Analysis_Sep2016/directTDC/calib/calib_sum.root.
 Successfully read pixel map file ../pixel-coord_channel-register.ascii
 Importing file /home/evovch/Documents/DATA/Scan_direct_tdc_0010_refch_1/te15134141138.hld
 The entire file /home/evovch/Documents/DATA/Scan_direct_tdc_0010_refch_1/te15134141138.hld is in memory
@@ -4457,7 +4457,7 @@ ANALYSISINFOFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 CORRECTIONSFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 RINGSANALYSISINFOFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 Successfully imported config file /home/evovch/Documents/Analysis_Sep2016/directTDC/config/config1.cfg
-Successfully imported calibration tables from /home/evovch/Documents/Analysis_Sep2016/directTDC/calib/calib_te15134132956.hld.root.
+Successfully imported calibration tables from /home/evovch/Documents/Analysis_Sep2016/directTDC/calib/calib_sum.root.
 Successfully read pixel map file ../pixel-coord_channel-register.ascii
 Importing file /home/evovch/Documents/DATA/Scan_direct_tdc_0010_refch_1/te15134132956.hld
 The entire file /home/evovch/Documents/DATA/Scan_direct_tdc_0010_refch_1/te15134132956.hld is in memory
@@ -5197,7 +5197,7 @@ ANALYSISINFOFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 CORRECTIONSFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 RINGSANALYSISINFOFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 Successfully imported config file /home/evovch/Documents/Analysis_Sep2016/directTDC/config/config2.cfg
-Successfully imported calibration tables from /home/evovch/Documents/Analysis_Sep2016/directTDC/calib/calib_te15134133240.hld.root.
+Successfully imported calibration tables from /home/evovch/Documents/Analysis_Sep2016/directTDC/calib/calib_sum.root.
 Successfully read pixel map file ../pixel-coord_channel-register.ascii
 Importing file /home/evovch/Documents/DATA/Scan_direct_tdc_0010_refch_1/te15134133240.hld
 The entire file /home/evovch/Documents/DATA/Scan_direct_tdc_0010_refch_1/te15134133240.hld is in memory
@@ -5937,7 +5937,7 @@ ANALYSISINFOFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 CORRECTIONSFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 RINGSANALYSISINFOFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 Successfully imported config file /home/evovch/Documents/Analysis_Sep2016/directTDC/config/config3.cfg
-Successfully imported calibration tables from /home/evovch/Documents/Analysis_Sep2016/directTDC/calib/calib_te15134133516.hld.root.
+Successfully imported calibration tables from /home/evovch/Documents/Analysis_Sep2016/directTDC/calib/calib_sum.root.
 Successfully read pixel map file ../pixel-coord_channel-register.ascii
 Importing file /home/evovch/Documents/DATA/Scan_direct_tdc_0010_refch_1/te15134133516.hld
 The entire file /home/evovch/Documents/DATA/Scan_direct_tdc_0010_refch_1/te15134133516.hld is in memory
@@ -6677,7 +6677,7 @@ ANALYSISINFOFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 CORRECTIONSFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 RINGSANALYSISINFOFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 Successfully imported config file /home/evovch/Documents/Analysis_Sep2016/directTDC/config/config4.cfg
-Successfully imported calibration tables from /home/evovch/Documents/Analysis_Sep2016/directTDC/calib/calib_te15134133929.hld.root.
+Successfully imported calibration tables from /home/evovch/Documents/Analysis_Sep2016/directTDC/calib/calib_sum.root.
 Successfully read pixel map file ../pixel-coord_channel-register.ascii
 Importing file /home/evovch/Documents/DATA/Scan_direct_tdc_0010_refch_1/te15134133929.hld
 The entire file /home/evovch/Documents/DATA/Scan_direct_tdc_0010_refch_1/te15134133929.hld is in memory
@@ -7417,7 +7417,7 @@ ANALYSISINFOFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 CORRECTIONSFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 RINGSANALYSISINFOFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 Successfully imported config file /home/evovch/Documents/Analysis_Sep2016/directTDC/config/config5.cfg
-Successfully imported calibration tables from /home/evovch/Documents/Analysis_Sep2016/directTDC/calib/calib_te15134134214.hld.root.
+Successfully imported calibration tables from /home/evovch/Documents/Analysis_Sep2016/directTDC/calib/calib_sum.root.
 Successfully read pixel map file ../pixel-coord_channel-register.ascii
 Importing file /home/evovch/Documents/DATA/Scan_direct_tdc_0010_refch_1/te15134134214.hld
 The entire file /home/evovch/Documents/DATA/Scan_direct_tdc_0010_refch_1/te15134134214.hld is in memory
@@ -8158,7 +8158,7 @@ ANALYSISINFOFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 CORRECTIONSFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 RINGSANALYSISINFOFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 Successfully imported config file /home/evovch/Documents/Analysis_Sep2016/directTDC/config/config6.cfg
-Successfully imported calibration tables from /home/evovch/Documents/Analysis_Sep2016/directTDC/calib/calib_te15134134504.hld.root.
+Successfully imported calibration tables from /home/evovch/Documents/Analysis_Sep2016/directTDC/calib/calib_sum.root.
 Successfully read pixel map file ../pixel-coord_channel-register.ascii
 Importing file /home/evovch/Documents/DATA/Scan_direct_tdc_0010_refch_1/te15134134504.hld
 The entire file /home/evovch/Documents/DATA/Scan_direct_tdc_0010_refch_1/te15134134504.hld is in memory
@@ -8899,7 +8899,7 @@ ANALYSISINFOFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 CORRECTIONSFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 RINGSANALYSISINFOFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 Successfully imported config file /home/evovch/Documents/Analysis_Sep2016/directTDC/config/config7.cfg
-Successfully imported calibration tables from /home/evovch/Documents/Analysis_Sep2016/directTDC/calib/calib_te15134134751.hld.root.
+Successfully imported calibration tables from /home/evovch/Documents/Analysis_Sep2016/directTDC/calib/calib_sum.root.
 Successfully read pixel map file ../pixel-coord_channel-register.ascii
 Importing file /home/evovch/Documents/DATA/Scan_direct_tdc_0010_refch_1/te15134134751.hld
 The entire file /home/evovch/Documents/DATA/Scan_direct_tdc_0010_refch_1/te15134134751.hld is in memory
@@ -9640,7 +9640,7 @@ ANALYSISINFOFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 CORRECTIONSFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 RINGSANALYSISINFOFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 Successfully imported config file /home/evovch/Documents/Analysis_Sep2016/directTDC/config/config8.cfg
-Successfully imported calibration tables from /home/evovch/Documents/Analysis_Sep2016/directTDC/calib/calib_te15134135106.hld.root.
+Successfully imported calibration tables from /home/evovch/Documents/Analysis_Sep2016/directTDC/calib/calib_sum.root.
 Successfully read pixel map file ../pixel-coord_channel-register.ascii
 Importing file /home/evovch/Documents/DATA/Scan_direct_tdc_0010_refch_1/te15134135106.hld
 The entire file /home/evovch/Documents/DATA/Scan_direct_tdc_0010_refch_1/te15134135106.hld is in memory
@@ -10380,7 +10380,7 @@ ANALYSISINFOFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 CORRECTIONSFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 RINGSANALYSISINFOFILE=/home/evovch/Documents/Analysis_Sep2016/directTDC/
 Successfully imported config file /home/evovch/Documents/Analysis_Sep2016/directTDC/config/config9.cfg
-Successfully imported calibration tables from /home/evovch/Documents/Analysis_Sep2016/directTDC/calib/calib_te15134135351.hld.root.
+Successfully imported calibration tables from /home/evovch/Documents/Analysis_Sep2016/directTDC/calib/calib_sum.root.
 Successfully read pixel map file ../pixel-coord_channel-register.ascii
 Importing file /home/evovch/Documents/DATA/Scan_direct_tdc_0010_refch_1/te15134135351.hld
 The entire file /home/evovch/Documents/DATA/Scan_direct_tdc_0010_refch_1/te15134135351.hld is in memory

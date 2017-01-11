@@ -1,16 +1,3 @@
-/*
-	Try:
-	INDEX 0, STARTPOINT 0.
-	INDEX 1, STARTPOINT 0.
-	INDEX 11, STARTPOINT 2.
-	INDEX 13, STARTPOINT 0.
-	INDEX 25, STARTPOINT 8.
-	INDEX 34, STARTPOINT 4. or 5. or 6.
-	INDEX 42, STARTPOINT 7.
-	INDEX 44, STARTPOINT 0.
-*/
-
-#define STARTPOINT 2.
 #define INDEX 11
 
 void fitAll(TString filename="scans/thrScans_from_pairs.root")
@@ -34,17 +21,16 @@ void fitAll(TString filename="scans/thrScans_from_pairs.root")
 		}
 	}
 
-
 	// Draw the scan
 	TCanvas* canv = new TCanvas("canv", "canv", 1364, 796);
-	canv->Divide(1,2); canv->cd(1);
+	canv->Divide(2,2); canv->cd(2);
 	gPad->SetGrid(1, 1);
 	thrScan[INDEX]->SetStats(kFALSE);
 	thrScan[INDEX]->Draw();
 
 
 	// Fit the scan
-	TF1* polynom = new TF1("polynom", "[0] + [1]*x + [2]*x**2 + [3]*x**3 + [4]*x**4 + [5]*x**5 + [6]*x**6 + [7]*x**7", STARTPOINT, 76.);
+	TF1* polynom = new TF1("polynom", "[0] + [1]*x + [2]*x**2 + [3]*x**3 + [4]*x**4 + [5]*x**5 + [6]*x**6 + [7]*x**7", -0x7f80, -0x7600);
 
 	//FIXME - tune it!
 	TVirtualFitter::SetMaxIterations(4000);
@@ -52,16 +38,16 @@ void fitAll(TString filename="scans/thrScans_from_pairs.root")
 	TVirtualFitter::SetPrecision(1e-2);
 	cout << "Forced precision: " << TVirtualFitter::GetPrecision() << endl;
 
-	thrScan[INDEX]->Fit(polynom, "", "", STARTPOINT, 76.);
+	thrScan[INDEX]->Fit(polynom, "", "", -0x7f80, -0x7600);
 
 
 	// Find and draw the derivative
 	//TCanvas* canv2 = new TCanvas("canv2", "canv2", 1364, 796);
-	canv->cd(2);
+	canv->cd(4);
 	gPad->SetGrid(1, 1);
 
 	// Analytical function - derivative of the fitting curve
-	TF1* myDeriv = new TF1("myDeriv", "-([0] + 2*[1]*x + 3*[2]*x**2 + 4*[3]*x**3 + 5*[4]*x**4 + 6*[5]*x**5 + 7*[6]*x**6)", STARTPOINT, 76.);
+	TF1* myDeriv = new TF1("myDeriv", "-([0] + 2*[1]*x + 3*[2]*x**2 + 4*[3]*x**3 + 5*[4]*x**4 + 6*[5]*x**5 + 7*[6]*x**6)", -0x7f80, -0x7600);
 	myDeriv->SetParameters(polynom->GetParameter(1),
 							polynom->GetParameter(2),
 							polynom->GetParameter(3),
@@ -75,10 +61,10 @@ void fitAll(TString filename="scans/thrScans_from_pairs.root")
 	myDeriv->SetLineColor(kBlack);
 	myDeriv->GetXaxis()->SetTitle("Threshold");
 	myDeriv->Draw();
-
-	thrScan[INDEX]->GetXaxis()->SetRangeUser(STARTPOINT, 76.);
-	myDeriv->GetXaxis()->SetRangeUser(STARTPOINT, 76.);
-
+/*
+	thrScan[INDEX]->GetXaxis()->SetRangeUser(-0x7f80 + 0x20*STARTPOINT, -0x7600);
+	myDeriv->GetXaxis()->SetRangeUser(-0x7f80 + 0x20*STARTPOINT, -0x7600);
+*/
 /*
 	TFile* outputFile = new TFile("fittedScans.root", "RECREATE");
 	for (UInt_t i=0; i<64; i++) {
