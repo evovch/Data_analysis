@@ -1,4 +1,4 @@
-#define BASELINE 0x8220
+#define BASELINE 0x80e0
 
 void buildScan_from_unpack_info(TString listFilename="analysis_results/filelist1.txt", TString picturesDir="scans/pictures_from_unpack_info")
 {

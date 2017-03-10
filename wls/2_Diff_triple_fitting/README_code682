@@ -1,0 +1,64 @@
+Code682 ------------------------------------------------------------------------------------------------------------------------------------
+
+1.4 ns
+
+root [0] 
+Processing quatro_fitting_code682.C...
+ FCN=1040.13 FROM MIGRAD    STATUS=CONVERGED      50 CALLS          51 TOTAL
+                     EDM=1.22756e-19    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  p0           4.93964e+03   6.21671e+01   6.54495e-01   5.21105e-12
+   2  p1           8.39541e+02   1.24125e+01   1.26368e-01  -1.79929e-11
+   3  p2           1.56764e+01   3.21083e-01   4.79225e-03  -4.74461e-10
+Info in <TCanvas::Print>: eps file diff_tripleTauFit_code682_1.4ns.eps has been created
+
+1.1 ns
+
+root [0] 
+Processing quatro_fitting_code682.C...
+ FCN=768.422 FROM MIGRAD    STATUS=CONVERGED      50 CALLS          51 TOTAL
+                     EDM=1.1507e-21    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  p0           7.15381e+03   8.81563e+01   9.08389e-01  -6.25761e-13
+   2  p1           9.98272e+02   1.09128e+01   1.08634e-01  -2.61627e-12
+   3  p2           1.48832e+01   3.19183e-01   4.11973e-03   6.89892e-11
+Info in <TCanvas::Print>: eps file diff_tripleTauFit_code682_1.1ns.eps has been created
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+25.01.2017
+
+Картинка, такая же как и в статье - самая красивая.
+Диапазон - от 1.5 нс до 50 нс.
+
+Сдвиг на 1 нс по горизонтали и первая компонента равна 1.1 нс.
+
+root [0] 
+Processing fitting_shift_1ns.C...
+ FCN=768.422 FROM MIGRAD    STATUS=CONVERGED      50 CALLS          51 TOTAL
+                     EDM=3.34225e-20    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  p0           2.88220e+03   3.55173e+01   3.66002e-01  -7.76545e-13
+   2  p1           7.67292e+02   8.38781e+00   8.34987e-02  -6.80770e-12
+   3  p2           1.45561e+01   3.12168e-01   4.02919e-03   7.75934e-10
+Info in <TCanvas::Print>: eps file fitting_shift_1ns_tau1_1.1ns.eps has been created
+
+
+Без сдвига по горизонтали и первая компонента равна 1.1 нс.
+
+root [0] 
+Processing fitting_shift_1ns.C...
+ FCN=768.422 FROM MIGRAD    STATUS=CONVERGED      50 CALLS          51 TOTAL
+                     EDM=1.1507e-21    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  p0           7.15381e+03   8.81563e+01   9.08389e-01  -6.25761e-13
+   2  p1           9.98272e+02   1.09128e+01   1.08634e-01  -2.61627e-12
+   3  p2           1.48832e+01   3.19183e-01   4.11973e-03   6.89892e-11
+Info in <TCanvas::Print>: eps file fitting_shift_0ns_tau1_1.1ns.eps has been created
+

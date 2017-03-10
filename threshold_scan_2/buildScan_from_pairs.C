@@ -1,4 +1,4 @@
-#define BASELINE 0x8220
+#define BASELINE 0x80e0
 
 void buildScan_from_pairs(TString listFilename="analysis_results/filelist3.txt", TString picturesDir="scans/pictures_from_pairs")
 {

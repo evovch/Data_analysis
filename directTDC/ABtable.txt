@@ -1,0 +1,16 @@
+ch 1:	Leading	27.074,	512.308		ch 2:	Trailing	27.530,	513.949
+ch 3:	Leading	26.857,	511.822		ch 4:	Trailing	28.109,	512.343
+ch 5:	Leading	27.483,	515.398		ch 6:	Trailing	26.511,	514.934
+ch 7:	Leading	26.615,	513.930		ch 8:	Trailing	26.931,	508.538
+ch 9:	Leading	28.940,	511.557		ch 10:	Trailing	27.501,	507.609
+ch 11:	Leading	28.718,	510.593		ch 12:	Trailing	27.334,	505.606
+ch 13:	Leading	28.165,	506.704		ch 14:	Trailing	26.082,	499.074
+ch 15:	Leading	26.006,	497.462		ch 16:	Trailing	26.861,	495.585
+ch 17:	Leading	28.430,	508.099		ch 18:	Trailing	28.224,	505.086
+ch 19:	Leading	28.507,	509.759		ch 20:	Trailing	26.477,	507.172
+ch 21:	Leading	28.658,	510.107		ch 22:	Trailing	27.862,	511.947
+ch 23:	Leading	27.115,	514.065		ch 24:	Trailing	26.622,	512.791
+ch 25:	Leading	26.310,	511.333		ch 26:	Trailing	26.520,	512.891
+ch 27:	Leading	26.792,	507.283		ch 28:	Trailing	27.835,	508.364
+ch 29:	Leading	25.770,	498.196		ch 30:	Trailing	27.757,	499.617
+ch 31:	Leading	26.414,	494.676		ch 32:	Trailing	27.633,	497.561

@@ -25,7 +25,7 @@ UInt_t IntegerToTDCid(UInt_t index)
     return (((index/4) + 1) << 4) + (index%4);
 }
 
-void calibTableFitting(TString p_filename="calib_sum.root")
+void calibTableFitting(TString p_filename="calib/calib_sum.root")
 {
 	TFile* inputFile = new TFile(p_filename, "READ");
 
@@ -33,7 +33,7 @@ void calibTableFitting(TString p_filename="calib_sum.root")
 	const UInt_t NUMCHs = 33;
 
 	TH1D* outputHisto[NUMTDCs][(NUMCHs-1)];
-	TH2D* ABmap = new TH2D("ABmap", "ABmap", 5*(Xmax-Xmin), Xmin, Xmax, 5*(Ymax-Ymin), Ymin, Ymax);
+	TH2D* ABmap = new TH2D("ABmap", "ABmap", 20*(Xmax-Xmin), Xmin, Xmax, 5*(Ymax-Ymin), Ymin, Ymax);
 	TH1D* Ahisto = new TH1D("Ahisto", "Ahisto", 100, 0., 100.);
 	TH1D* Bhisto = new TH1D("Bhisto", "Bhisto", 200, 400., 600.);
 
@@ -67,7 +67,10 @@ void calibTableFitting(TString p_filename="calib_sum.root")
 			A[tdc][ch-1] = fitFunc->GetParameter(0);
 			B[tdc][ch-1] = fitFunc->GetParameter(1);
 
-			ABmap->Fill(A[tdc][ch-1], B[tdc][ch-1]);
+			for (UInt_t k=0; k<ch; k++) {
+				ABmap->Fill(A[tdc][ch-1], B[tdc][ch-1]);
+			}
+
 			Ahisto->Fill(A[tdc][ch-1]);
 			Bhisto->Fill(B[tdc][ch-1]);
 
@@ -110,8 +113,8 @@ void calibTableFitting(TString p_filename="calib_sum.root")
 	}
 	ABgraphL->Draw("A*");
 	gPad->SetGrid(1, 1);
-	//ABgraph->GetXaxis()->SetRangeUser(20., 34.);
-	//ABgraph->GetYaxis()->SetRangeUser(420., 560.);
+	ABgraphL->GetXaxis()->SetRangeUser(25.4, 29.3);
+	ABgraphL->GetYaxis()->SetRangeUser(490., 520.);
 	ABgraphL->GetXaxis()->SetTitle("Fine time counter value");
 	ABgraphL->GetYaxis()->SetTitle("Fine time counter value");
 	ABgraphL->SetMarkerStyle(kFullCircle); // kFullDotMedium
@@ -138,8 +141,6 @@ void calibTableFitting(TString p_filename="calib_sum.root")
 	usedABgrL->SetMarkerColor(kBlack);
 	usedABgrL->SetMarkerSize(3);
 
-	cout << "Leading " << A[0][ch-1] << ", " << B[0][ch-1] << endl;
-
 	ch = 2;
 	TGraph* usedABgrT = new TGraph();
 	usedABgrT->SetPoint(0, A[0][ch-1], B[0][ch-1]);
@@ -148,10 +149,16 @@ void calibTableFitting(TString p_filename="calib_sum.root")
 	usedABgrT->SetMarkerColor(kRed);
 	usedABgrT->SetMarkerSize(3);
 
-	cout << "Trailing " << A[0][ch-1] << ", " << B[0][ch-1] << endl;
-
 	canvGraph->SaveAs("ABmap.eps");
 	canvGraph->SaveAs("ABmap.png");
+
+	for (UInt_t ch=1; ch<NUMCHs; ch+=2) {
+		cout << std::fixed;
+		cout << std::setprecision(3);
+		cout << "ch " << ch << ":\tLeading\t" << A[0][ch-1] << ",\t" << B[0][ch-1] << "\t\t";
+		cout << "ch " << ch+1 << ":\tTrailing\t" << A[0][ch+1-1] << ",\t" << B[0][ch+1-1] << endl;
+	}
+
 
 outside:
 
@@ -159,6 +166,8 @@ outside:
 	ABmap->Draw("TEXT"); // COLZ
 	ABmap->GetXaxis()->SetTitle("Fine time counter value");
 	ABmap->GetYaxis()->SetTitle("Fine time counter value");
+	ABmap->GetXaxis()->SetRangeUser(25.4, 29.3);
+	ABmap->GetYaxis()->SetRangeUser(490., 520.);
 	gPad->SetGrid(1, 1);
 	gPad->Update();
 

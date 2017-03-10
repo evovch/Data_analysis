@@ -61,11 +61,18 @@ void drawStability(TString listFilename="filelist.txt", TString fullFilename="..
 	gStyle->SetOptStat(kFALSE);
 
 	histos[0]->Draw();
-	histos[0]->SetTitle("Calibration stability");
+	histos[0]->SetTitle(""); // Calibration stability
 	histos[0]->GetYaxis()->SetTitle("Fine time diff, [ns]");
 
 	histos[0]->GetXaxis()->SetRangeUser(0., 600.);
 	histos[0]->GetYaxis()->SetRangeUser(-0.03, 0.03);
+
+	histos[0]->GetXaxis()->SetLabelSize(0.06);
+	histos[0]->GetYaxis()->SetLabelSize(0.06);
+	histos[0]->GetXaxis()->SetTitleSize(0.06);
+	histos[0]->GetYaxis()->SetTitleSize(0.06);
+	histos[0]->GetXaxis()->SetTitleOffset(0.78);
+	histos[0]->GetYaxis()->SetTitleOffset(0.84);
 
 	gPad->SetGrid(1, 1);
 
@@ -85,6 +92,8 @@ void drawStability(TString listFilename="filelist.txt", TString fullFilename="..
 	histos[3]->SetLineStyle(2);
 	histos[6]->SetLineStyle(3);
 
-	canvFinal->SaveAs("calibrationStability_dec2016.eps");
-	canvFinal->SaveAs("calibrationStability_dec2016.png");
+
+
+//	canvFinal->SaveAs("calibrationStability_dec2016.eps");
+//	canvFinal->SaveAs("calibrationStability_dec2016.png");
 }
